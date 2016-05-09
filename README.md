@@ -17,3 +17,11 @@
 ### Hosting the server
 
 1. In Android Studio, go to the 'Build' menu, then click 'Deploy Module to App Engine...', and you'll either get a menu for deploying, or a screen for logging in. Simply press 'Deploy' (if you're logged in) and you'll have released a new build of the server!
+
+
+## More Resources
+Keep in mind that we're using HTTP/REST, not the provided object serialization, when reading these resources.
+
+* https://cloud.google.com/appengine/docs/java/endpoints/annotations
+* https://cloud.google.com/appengine/docs/java/endpoints/getstarted/backend/code_walkthrough
+* https://cloud.google.com/appengine/docs/java/endpoints/

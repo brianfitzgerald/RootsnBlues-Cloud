@@ -1,4 +1,4 @@
-# RootsnBlues Cloud
+# RootsnBlues on Google Cloud
 
 ## Setup Instructions
 

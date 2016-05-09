@@ -16,4 +16,4 @@
 
 ### Hosting the server
 
-1. In Android Studio, go to the 'Build' menu, then click 'Deploy Module to App Engine...', and you'll either get a menu for deploying, or a screen for logging in. Simply press 'Deploy' and you'll have released a new build of the server!
+1. In Android Studio, go to the 'Build' menu, then click 'Deploy Module to App Engine...', and you'll either get a menu for deploying, or a screen for logging in. Simply press 'Deploy' (if you're logged in) and you'll have released a new build of the server!

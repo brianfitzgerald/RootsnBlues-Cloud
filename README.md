@@ -1,6 +1,4 @@
-# RootsnBlues on Google Cloud
-
-## Setup Instructions
+# Setup Instructions
 
 1. Clone the repository.
 2. Open Android Studio. Choose "Open an Existing Android Studio Project".
@@ -8,18 +6,18 @@
 4. Press 'Make Project' (or press Command-F9) and the project will be built. You can now run it locally or deploy it on a server.
 
 
-### Running the server locally
+## Running the server locally
 
 1. Next to the 'make project' button, there is a dropdown arrow for selecting build targets. Select the 'backend' one, and press the run button like you would with any Android project.
 2. A local server will run on http://localhost:8080/ with local Datastore running. Go to http://localhost:8080/_ah/admin/datastore? to see the datastore.
 
 
-### Hosting the server
+## Hosting the server
 
 1. In Android Studio, go to the 'Build' menu, then click 'Deploy Module to App Engine...', and you'll either get a menu for deploying, or a screen for logging in. Simply press 'Deploy' (if you're logged in) and you'll have released a new build of the server!
 
 
-## More Resources
+# More Resources
 Keep in mind that we're using HTTP/REST, not the provided object serialization, when reading these.
 
 * https://cloud.google.com/appengine/docs/java/endpoints/annotations
@@ -27,7 +25,7 @@ Keep in mind that we're using HTTP/REST, not the provided object serialization, 
 * https://cloud.google.com/appengine/docs/java/endpoints/
 
 
-# Writing an Endpoint
+## Writing an Endpoint
 
 Consider the following sample endpoint:
 

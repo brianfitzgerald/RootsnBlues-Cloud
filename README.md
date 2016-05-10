@@ -20,8 +20,35 @@
 
 
 ## More Resources
-Keep in mind that we're using HTTP/REST, not the provided object serialization, when reading these resources.
+Keep in mind that we're using HTTP/REST, not the provided object serialization, when reading these.
 
 * https://cloud.google.com/appengine/docs/java/endpoints/annotations
 * https://cloud.google.com/appengine/docs/java/endpoints/getstarted/backend/code_walkthrough
 * https://cloud.google.com/appengine/docs/java/endpoints/
+
+
+# Writing an Endpoint
+
+Consider the following sample endpoint:
+
+    private static final DatastoreService datastoreService = DatastoreServiceFactory.getDatastoreService();
+
+    @ApiMethod(name = "getEvent", path = "event")
+    public Event getEvent(@Named("eventID") long id) {
+        logger.info("getting single event");
+        Event foundEvent = null;
+        try {
+            Entity eventDatastoreObject = datastoreService.get(KeyFactory.createKey("Event", id));
+            foundEvent = new Event((String) eventDatastoreObject.getProperty("name"), (String) eventDatastoreObject.getProperty("details"));
+        } catch (EntityNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return foundEvent;
+    }
+
+This endpoint queries the DatastoreService for an object with the ID given as a proeprty. Each datastore object contains a Key, which contains the object's type as well as its ID. Getting a single Entity from the datastore, we can then create a new Event object with its proeprties.
+
+Using the @ApiMethod annotiations, we can define a name for the API call for documentation purposes, as well as a specific path; otherwise, Endpoints will just use the name of the object it returns.
+
+Endpoints requires that only objects and abstract types are returned, not primitive ones; Lists are OK. Objects are sent as JSON.
